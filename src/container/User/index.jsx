@@ -34,7 +34,6 @@ const User = () => {
                 <span><img style={{width: 30, height: 30, verticalAlign: '-10px'}} src="//s.yezgea02.com/1615973630132/geqian.png"
                alt=""/><b>{user.signature || '暂无个签'}</b></span>
             </div>
-
         </div>
         <div className={s.content}>
             <Cell

@@ -4,7 +4,6 @@ import { Cell, Input, Button, Toast } from 'zarm';
 import { createForm  } from 'rc-form';
 import Header from '@/components/Header'
 import { post } from '@/utils'
-
 import s from './style.module.less'
 
 const Account = (props) => {
@@ -17,7 +16,6 @@ const Account = (props) => {
         props.form.validateFields(async (error, value) => {
             // error 表单验证全部通过，为 false，否则为 true
             if (!error) {
-
                 if (value.newpass !== value.newpass2) {
                     Toast.show('新密码输入不一致');
                     return
@@ -29,7 +27,6 @@ const Account = (props) => {
                 })
                 Toast.show('修改成功')
                 window.location.href = '/user'
-
             }
         });
     }
@@ -58,7 +55,7 @@ const Account = (props) => {
                     <Input
                         clearable
                         type="text"
-                        placeholder="请再此输入新密码确认"
+                        placeholder="请再次输入密码以确认"
                         {...getFieldProps('newpass2', { rules: [{ required: true }] })}
                     />
                 </Cell>

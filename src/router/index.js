@@ -1,4 +1,3 @@
-
 import Data from "../container/Data";
 import Home from "../container/Home";
 import User from "../container/User";

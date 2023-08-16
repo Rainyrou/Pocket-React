@@ -1,24 +1,23 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Popup, Icon, Toast, Keyboard, Modal, Input  } from 'zarm';
+import { Popup, Icon, Toast, Keyboard, Modal, Input } from 'zarm';
 import CustomIcon from '../CustomIcon';
-import { get, typeMap } from '@/utils';
+import { get, post, typeMap } from '@/utils';
 import cx from 'classnames';
 import s from './style.module.less';
 import dayjs from 'dayjs';
-import PopupDate from '../PopupDate'
-import { post } from '@/utils';
-
+import PopupDate from '../PopupDate';
 
 const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
-
     const id = detail && detail.id // 外部传进来的账单详情 id
-    const [show, setShow] = useState(false) // 内部控制弹窗显示隐藏。
-    // 通过 forwardRef 拿到外部传入的 ref，并添加属性，使得父组件可以通过 ref 控制子组件。
+    const [show, setShow] = useState(false) // 内部控制弹窗显示隐藏
+
+    // 通过 forwardRef 拿到外部传入的 ref，并添加属性，使得父组件可以通过 ref 控制子组件
     const [payType, setPayType] = useState('expense'); // 支出或收入类型
     const [date, setDate] = useState(new Date()); // 日期
     const [remark, setRemark] = useState(''); // 备注
     const [showRemark, setShowRemark] = useState(false); // 备注输入框展示控制
+
     // 切换收入还是支出
     const dateRef = useRef();
     const [amount, setAmount] = useState(''); // 账单价格
@@ -30,6 +29,7 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
     const changeType = (type) => {
         setPayType(type);
     };
+
     // 日期选择回调
     const selectDate = (val) => {
         setDate(val);
@@ -49,7 +49,6 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
     }, [detail])
 
     useEffect(async () => {
-
         const list=[
             {
                 "id": 1,
@@ -148,6 +147,7 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
                 "user_id": 0
             }
         ]
+
         const _expense = list.filter(i => i.type == 1); // 支出类型
         const _income = list.filter(i => i.type == 2); // 收入类型
         setExpense(_expense);
@@ -167,7 +167,6 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
             setAmount(_amount)
             return
         }
-
         // 点击确认按钮时
         if (value == 'ok') {
             // 这里将处理添加账单逻辑
@@ -183,7 +182,7 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
         setAmount(amount + value)
     }
 
-// 添加账单
+    // 添加账单
     const addBill = async () => {
         if (!amount) {
             Toast.show('请输入具体金额')
@@ -214,6 +213,7 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
         setShow(false);
         if (onReload) onReload();
     }
+
     if (ref) {
         ref.current = {
             show: () => {
@@ -237,9 +237,9 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
             <header className={s.header}>
                 <span className={s.close} onClick={() => setShow(false)}><Icon type="wrong" /></span>
             </header>
+
             {/* 「收入」和「支出」类型切换 */}
             <div className={s.filter}>
-
                 <div className={s.type}>
                     <span onClick={() => changeType('expense')} className={cx({ [s.expense]: true, [s.active]: payType === 'expense' })}>支出</span>
                     <span onClick={() => changeType('income')} className={cx({ [s.income]: true, [s.active]: payType === 'income' })}>收入</span>
@@ -263,6 +263,7 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
                     }
                 </div>
             </div>
+
             <div className={s.remark}>
                 {
                     showRemark ? <Input
@@ -278,6 +279,7 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
                     /> : <span onClick={() => setShowRemark(true)}>{remark || '添加备注'}</span>
                 }
             </div>
+
             <div className={s.money}>
                 <span className={s.sufix}>¥</span>
                 <span className={cx(s.amount, s.animation)}>{amount}</span>

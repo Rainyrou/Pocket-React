@@ -61,12 +61,14 @@ const Login = () => {
     useEffect(() => {
         document.title = type == 'login' ? '登录' : '注册';
     }, [type])
+
     return <div className={s.auth}>
         <div className={s.head} />
         <div className={s.tab}>
             <span className={cx({ [s.avtive]: type == 'login' })} onClick={() => setType('login')}>登录</span>
             <span className={cx({ [s.avtive]: type == 'register' })} onClick={() => setType('register')}>注册</span>
         </div>
+
         <div className={s.form}>
             <Cell icon={<CustomIcon type="zhanghao" />}>
                 <Input
@@ -76,6 +78,7 @@ const Login = () => {
                     onChange={(value) => setUsername(value)}
                 />
             </Cell>
+
             <Cell icon={<CustomIcon type="mima" />}>
                 <Input
                     clearable
@@ -84,6 +87,7 @@ const Login = () => {
                     onChange={(value) => setPassword(value)}
                 />
             </Cell>
+
             {
                 type == 'register' ? <Cell icon={<CustomIcon type="mima" />}>
                     <Input
@@ -96,8 +100,8 @@ const Login = () => {
                 </Cell> : null
             }
         </div>
+        
         <div className={s.operation}>
-
             <Button onClick={onSubmit} block theme="primary">{type == 'login' ? '登录' : '注册'}</Button>
         </div>
     </div>

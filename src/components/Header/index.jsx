@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom'
 import { NavBar, Icon } from 'zarm';
+import s from './style.module.less';
 
-import s from './style.module.less'
 const Header = ({ title = '' }) => {
     const history = useHistory()
     return <div className={s.headerWarp}>

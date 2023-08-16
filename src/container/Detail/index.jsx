@@ -11,8 +11,6 @@ import { useLocation, useHistory } from 'react-router-dom';
 import { get, post, typeMap } from '@/utils';
 import { Modal, Toast } from 'zarm';
 
-
-
 const Detail = () => {
     const location = useLocation(); // 获取 locaton 实例，我们可以通过打印查看内部都有些什么内容。
     const { id } = qs.parse(location.search);
@@ -41,7 +39,6 @@ const Detail = () => {
             },
         });
     }
-
 
     return <div className={s.detail}>
         <Header title='账单详情' />

@@ -5,7 +5,6 @@ import {Cell} from 'zarm';
 import {useHistory} from 'react-router-dom'
 import CustomIcon from '../CustomIcon';
 import {typeMap} from '@/utils';
-
 import s from './style.module.less';
 
 const BillItem = ({bill}) => {
@@ -25,17 +24,17 @@ const BillItem = ({bill}) => {
             return curr
         },0)
         setIncome(_income)
+
         //支出
         const _expense = bill.bills.filter(i => i.pay_type === 1).reduce((curr, item) => {
             curr += Number(item.amount);
             return curr;
         }, 0);
         setExpense(_expense)
-    },[bill.bills])
+    }, [bill.bills])
 
     const goToDetail=(item)=>{
         history.push(`/detail?id=${item.id}`)
-
     }
 
     return <div className={s.item}>
@@ -46,12 +45,14 @@ const BillItem = ({bill}) => {
           <img src="//s.yezgea02.com/1615953405599/zhi%402x.png" alt='支' />
             <span>¥{ expense.toFixed(2) }</span>
         </span>
-                <span>
+
+        <span>
           <img src="//s.yezgea02.com/1615953405599/shou%402x.png" alt="收" />
           <span>¥{ income.toFixed(2) }</span>
         </span>
             </div>
         </div>
+
         {
             bill && bill.bills.sort((a, b) => b.date - a.date).map(item => <Cell
                 className={s.bill}

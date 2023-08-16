@@ -4,18 +4,17 @@ import PropTypes from 'prop-types'
 import { Popup, Icon } from 'zarm'
 import cx from 'classnames'
 import { get } from '@/utils'
-
 import s from './style.module.less'
 
-const PopupType=forwardRef(({ onSelect }, ref)=>{
+const PopupType = forwardRef(({ onSelect }, ref) => {
     const [show, setShow] = useState(false); // 组件的显示和隐藏
     const [active, setActive] = useState('all'); // 激活的 type
     const [expense, setExpense] = useState([]); // 支出类型标签
     const [income, setIncome] = useState([]); // 收入类型标签
 
-    useEffect(async ()=>{
+    useEffect(async () => {
         // 请求标签接口放在弹窗内，这个弹窗可能会被复用，所以请求如果放在外面，会造成代码冗余。
-        const list=[
+        const list = [
             {
                 "id": 1,
                 "name": "餐饮",
@@ -115,8 +114,7 @@ const PopupType=forwardRef(({ onSelect }, ref)=>{
         ]
         setExpense(list.filter(i => i.type === '1'))
         setIncome(list.filter(i => i.type === '2'))
-
-    },[])
+    }, [])
 
     if (ref) {
         ref.current = {
@@ -165,9 +163,7 @@ const PopupType=forwardRef(({ onSelect }, ref)=>{
                 </div>
             </div>
         </div>
-
     </Popup>
-
 })
 
 PopupType.propTypes = {

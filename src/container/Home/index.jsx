@@ -1,6 +1,6 @@
 // Home/index.jsx
 import React, {useState, useEffect, useRef} from 'react'
-import {Icon, Pull,Drag,Button} from 'zarm'
+import {Icon, Pull, Drag, Button} from 'zarm'
 import BillItem from "../../components/BillItem";
 import dayjs from 'dayjs'
 import s from './style.module.less'
@@ -73,17 +73,15 @@ const Home = () => {
         setDrag(false);
     };
 
-
-
     const addToggle = () => {
         addRef.current && addRef.current.show()
         // do something
     }
+
     const addRef = useRef(); // 添加账单 ref
     const typeRef = useRef(); // 账单类型 ref
     const monthRef = useRef(); // 月份筛选 ref
     const [currentSelect, setCurrentSelect] = useState({}); // 当前筛选类型
-
 
     // const [currentTime, setCurrentTime] = useState(dayjs().format('YYYY-MM')); // 当前筛选时间
     const [currentTime, setCurrentTime] = useState(dayjs().format('YYYY-MM')); // 当前筛选时间
@@ -96,7 +94,6 @@ const Home = () => {
 
     const [totalExpense, setTotalExpense] = useState(0); // 总支出
     const [totalIncome, setTotalIncome] = useState(0); // 总收入
-
 
     useEffect(() => {
         getBillList()
@@ -145,6 +142,7 @@ const Home = () => {
         }
     };
 
+    // 加载更多数据
     const loadData = () => {
         if (page < totalPage) {
             setLoading(LOAD_STATE.loading);
@@ -164,7 +162,6 @@ const Home = () => {
         setCurrentTime(item)
     }
 
-
     return <div className={s.home} style={{position: 'relative'}} ref={containerRef}>
         <div className={s.header}>
             <div className={s.dataWrap}>
@@ -180,6 +177,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        
         <div className={s.contentWrap}>
             {
                 list.length ? <Pull
@@ -217,6 +215,7 @@ const Home = () => {
                 <div className={s.add} onClick={addToggle}><CustomIcon type='tianjia'/></div>
             </div>
         </Drag>
+
         <PopupType ref={typeRef} onSelect={select} />
         <PopupDate ref={monthRef} mode="month" onSelect={selectMonth} />
         <PopupAddBill ref={addRef} onReload={refreshData} />
