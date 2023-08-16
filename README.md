@@ -1,8 +1,34 @@
-# React + Vite
+### 记账本全栈开发项目 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+技术栈：
 
-Currently, two official plugins are available:
+* 前端：React + Zarm Design + Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* 后端：Eggjs + Mysql + PM2
+
+项目实践：
+
+✅ 搭建 H5 前端开发环境
+
+✅ 引入 Zarm Design 并按需加载 
+
+✅ 封装弹窗、导航等 8 个组件
+
+✅ 二次封装 axios
+
+✅ 移动端项目适配 rem
+
+✅ 可视化工具 Echart + DBevaer
+ 
+✅ JWT 前后端认证
+
+✅ 1 套后端 crud
+
+✅ 10+ 接口设计
+
+✅ 跨域代理 
+
+✅ PM2 服务器部署
+
+
+
