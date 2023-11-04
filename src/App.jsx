@@ -1,5 +1,4 @@
 import React, {useState,useEffect} from 'react'
-import logo from './logo.svg'
 import './App.css'
 import NavBar from "./components/NavBar";
 import {
@@ -12,7 +11,7 @@ import routes from "./router";
 
 import {ConfigProvider} from 'zarm'
 import zhCN from 'zarm/lib/config-provider/locale/zh_CN'
-import 'zarm/dist/zarm.css'
+// import 'zarm/dist/zarm.css'
 
 function App() {
     const location = useLocation() // 拿到 location 实例

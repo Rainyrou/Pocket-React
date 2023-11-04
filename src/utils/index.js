@@ -56,7 +56,6 @@ export const typeMap = {
     }
 }
 
-// utils/index.jsx
 //添加一些 Pull 组件需要用到的常量
 export const REFRESH_STATE = {
     normal: 0, // 普通

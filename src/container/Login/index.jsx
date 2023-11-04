@@ -1,11 +1,12 @@
-import React, { useRef, useState, useCallback, useEffect } from 'react';
+import React, { useRef, useState, useCallback, useEffect, Suspense } from 'react';
 import { Cell, Input, Button, Checkbox, Toast } from 'zarm';
 import cx from 'classnames';
-import Captcha from "react-captcha-code";
 import CustomIcon from '@/components/CustomIcon';
 import { post } from '@/utils'
 
 import s from './style.module.less';
+
+const Captcha = React.lazy(() => import("react-captcha-code"))
 
 const Login = () => {
     const captchaRef = useRef();
@@ -96,7 +97,9 @@ const Login = () => {
                         placeholder="请输入验证码"
                         onChange={(value) => setVerify(value)}
                     />
-                    <Captcha ref={captchaRef} charNum={4} onChange={handleChange} />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Captcha ref={captchaRef} charNum={4} onChange={handleChange} />
+                    </Suspense>
                 </Cell> : null
             }
         </div>

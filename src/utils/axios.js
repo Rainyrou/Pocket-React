@@ -1,4 +1,3 @@
-// src/utils/axios.js
 import axios from 'axios'
 import { Toast } from 'zarm'
 /**
@@ -9,7 +8,7 @@ import { Toast } from 'zarm'
 const MODE = import.meta.env.MODE // 环境变量
 
 /**
- * baseURL 是 axios 的配置项，它的作用就是设置请求的基础路径，后续我们会在项目实战中有所体现。
+ * baseURL 是 axios 的配置项，它的作用就是设置请求的基础路径
  * 配置基础路径的好处就是，当请求地址修改的时候，可以在此统一配置。
  * @type {string}
  */

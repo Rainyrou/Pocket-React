@@ -23,7 +23,7 @@ const  Data = () => {
         getData()
         return () => {
             // 每次组件卸载的时候，需要释放图表实例。clear 只是将其清空不会释放。
-            proportionChart.dispose();
+            proportionChart?.dispose();
         }
     }, [currentMonth]);
 
