@@ -1,4 +1,3 @@
-// Account/index.jsx
 import React from 'react';
 import { Cell, Input, Button, Toast } from 'zarm';
 import { createForm  } from 'rc-form';

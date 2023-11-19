@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types'
 import {TabBar} from 'zarm';
 import {useHistory} from 'react-router-dom';
-import s from './style.module.less';
 import CustomIcon from '../CustomIcon'
 
 const NavBar = ({showNav,pathname}) => {

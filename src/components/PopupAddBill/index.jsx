@@ -1,8 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
 import { Popup, Icon, Toast, Keyboard, Modal, Input } from 'zarm';
 import CustomIcon from '../CustomIcon';
-import { get, post, typeMap } from '@/utils';
+import { post, typeMap } from '@/utils';
 import cx from 'classnames';
 import s from './style.module.less';
 import dayjs from 'dayjs';

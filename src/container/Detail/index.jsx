@@ -1,4 +1,3 @@
-// container/Detail/index.jsx
 import React, { useEffect, useState,useRef } from 'react';
 import PopupAddBill from '@/components/PopupAddBill';
 import qs from 'query-string';

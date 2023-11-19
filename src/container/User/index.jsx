@@ -1,8 +1,7 @@
-// Home/index.jsx
 import React, {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import {Cell, Modal, Input, Button, Toast, FilePicker} from 'zarm';
-import {get, post, imgUrlTrans} from '@/utils';
+import {Cell, Button } from 'zarm';
+import {get} from '@/utils';
 import s from './style.module.less';
 
 const User = () => {

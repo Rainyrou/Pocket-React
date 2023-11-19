@@ -1,9 +1,7 @@
-// PopupType/index.jsx
 import React, { forwardRef, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Popup, Icon } from 'zarm'
 import cx from 'classnames'
-import { get } from '@/utils'
 import s from './style.module.less'
 
 const PopupType = forwardRef(({ onSelect }, ref) => {

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useCallback, useEffect, Suspense } from 'react';
-import { Cell, Input, Button, Checkbox, Toast } from 'zarm';
+import { Cell, Input, Button, Toast } from 'zarm';
 import cx from 'classnames';
 import CustomIcon from '@/components/CustomIcon';
 import { post } from '@/utils'

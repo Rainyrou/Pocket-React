@@ -1,4 +1,3 @@
-// Home/index.jsx
 import React, {useState, useEffect, useRef} from 'react'
 import {Icon, Pull, Drag, Button} from 'zarm'
 import BillItem from "../../components/BillItem";
