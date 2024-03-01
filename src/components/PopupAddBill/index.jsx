@@ -8,6 +8,7 @@ import dayjs from 'dayjs';
 import PopupDate from '../PopupDate';
 
 const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
+  PopupAddBill.displayName = 'PopupAddBill';
   const id = detail && detail.id; // 外部传进来的账单详情 id
   const [show, setShow] = useState(false); // 内部控制弹窗显示隐藏
 

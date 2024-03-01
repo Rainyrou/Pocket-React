@@ -4,6 +4,7 @@ import { Popup, DatePicker } from 'zarm';
 import dayjs from 'dayjs';
 
 const PopupDate = forwardRef(({ onSelect, mode = 'date' }, ref) => {
+  PopupDate.displayName = 'PopupDate';
   const [show, setShow] = useState(false);
   const [now, setNow] = useState(new Date());
 

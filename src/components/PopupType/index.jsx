@@ -5,6 +5,7 @@ import cx from 'classnames';
 import s from './style.module.less';
 
 const PopupType = forwardRef(({ onSelect }, ref) => {
+  PopupType.displayName = 'PopupType';
   const [show, setShow] = useState(false); // 组件的显示和隐藏
   const [active, setActive] = useState('all'); // 激活的 type
   const [expense, setExpense] = useState([]); // 支出类型标签

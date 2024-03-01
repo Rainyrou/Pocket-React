@@ -1,3 +1,4 @@
+/* global echarts */
 import React, { useEffect, useRef, useState } from 'react';
 import { Icon, Progress } from 'zarm';
 import cx from 'classnames';
