@@ -1,42 +1,36 @@
 ## clownPocket
 
+项目地址：http://114.132.167.29:5021/
+
 技术栈：
 
 - 前端：React18 + Zarm Design + Vite
 
-- 后端：Egg.js + MySQL
+- 后端：Egg.js + MySQL + PM2
 
 项目实践：
 
-✅ 封装弹窗、导航等 8 个组件
+✅ 封装弹窗、导航等通用业务组件 + JWT 前后端认证
 
-✅ JWT 前后端认证 + 跨域代理
+✅ 接口、数据表设计 + 一套后端 CRUD
 
-✅ 1 套后端 crud + 10+ 接口设计
+✅ 数据可视化 + 性能优化
 
-✅ 可视化工具 Echart + DBevaer
+✅ 集成前端工程化配置 + 移动端适配
 
-✅ 按需引入 Zarm Design + 懒加载等性能优化
-
-✅ 集成 Vite + Husky + ESLint + lint-staged 等前端工程化配置
-
-✅ 移动端适配 + 从用户角度设计数据表
+✅ PM 部署上线
 
 待完成
 
-🔲 优化 UI 界面 + 可视化
+🔲 美化 UI 界面 + 数据可视化 2.0 + ChatGPT 集成
+
+🔲 性能优化 2.0 + SDK 埋点监控
+
+🔲 自制脚手架 + 自动化测试 + CI/CD 流水线
 
 🔲 React18 + TypeScript + Nest.js 重构前后端
 
-🔲 接入 ChatGPT
-
-🔲 SDK 埋点监控
-
-🔲 PM + Docker 打包部署
-
-🔲 Electron + Android + iOS 打包部署
-
-🔲 自制脚手架 + 自动化测试 + CICD
+🔲 Electron + Android + iOS + Docker 打包部署
 
 #### 项目运行
 
