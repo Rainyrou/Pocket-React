@@ -5,6 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "build:release": "vite build --mode release",
     "lint:script": "eslint --ext .js,.jsx --fix --quiet ./src",
     "test": "jest"
   },
