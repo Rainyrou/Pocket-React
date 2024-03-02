@@ -6,3 +6,4 @@ tsconfig.json
 /build
 /public
 postcss.config.js
+/android

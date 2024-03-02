@@ -20,3 +20,4 @@ CNAME
 node_modules
 tsconfig.json
 postcss.config.js
+/android
