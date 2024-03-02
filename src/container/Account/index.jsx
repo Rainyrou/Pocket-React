@@ -1,5 +1,6 @@
 import React from 'react';
-import { Cell, Input, Button, Toast } from 'zarm';
+import { Cell, Input, Button, Toast, NavBar } from 'zarm';
+import { ArrowLeft } from '@zarm-design/icons';
 import { createForm } from 'rc-form';
 import Header from '@/components/Header';
 import { post } from '@/utils';
@@ -32,27 +33,40 @@ const Account = (props) => {
 
   return (
     <>
-      <Header title="重置密码" />
+      <NavBar
+        className={s.navbar}
+        left={
+          <ArrowLeft
+            theme="primary"
+            onClick={() => (window.location.href = '/')}
+          />
+        }
+        title="重置密码"
+      />
       <div className={s.account}>
+        <div className={s.head} />
         <div className={s.form}>
-          <Cell title="原密码">
+          <Cell className={s.zaCell} title="原密码">
             <Input
+              className={s.zaInput}
               clearable
               type="text"
               placeholder="请输入原密码"
               {...getFieldProps('oldpass', { rules: [{ required: true }] })}
             />
           </Cell>
-          <Cell title="新密码">
+          <Cell className={s.zaCell} title="新密码">
             <Input
+              className={s.zaInput}
               clearable
               type="text"
               placeholder="请输入新密码"
               {...getFieldProps('newpass', { rules: [{ required: true }] })}
             />
           </Cell>
-          <Cell title="确认密码">
+          <Cell className={s.zaCell} title="确认密码">
             <Input
+              className={s.zaInput}
               clearable
               type="text"
               placeholder="请再次输入密码以确认"

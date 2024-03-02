@@ -1,8 +1,11 @@
 .userinfo {
-  padding: 0 10px;
-  h1 {
-    border-bottom: 1px solid #e9e9e9;
-    padding-bottom: 10px;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #f6e1e1, #fad0c4, #fad0c4, #ff9a9e) !important;
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  .navbar {
+    background: linear-gradient(-45deg, #f6e1e1, #fad0c4, #fad0c4, #ff9a9e) !important;
+    animation: gradientBG 15s ease infinite;
   }
   .item {
     border-bottom: 1px solid #e9e9e9;
@@ -27,11 +30,23 @@
         margin-left: 10px;
         .upload {
           width: 100px;
+          background: linear-gradient(135deg, #7B68EE 0%, #00BFFF 100%) !important;
+          border: none !important;
+          color: white !important;
         }
       }
     }
     .signature {
       padding: 0 10px;
     }
+  }
+  .btn {
+    background: linear-gradient(135deg, #7B68EE 0%, #00BFFF 100%) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 22px;
+    --padding-vertical: 12px;
+    font-size: 16px;
+    font-weight: bold;
   }
 }

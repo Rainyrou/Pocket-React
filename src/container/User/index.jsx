@@ -71,6 +71,18 @@ const User = () => {
             />
           }
         />
+        <Cell
+          hasArrow
+          title="关于我"
+          onClick={() => window.open('https://github.com/Rainyrou', '_blank')}
+          icon={
+            <img
+              style={{ width: 20, verticalAlign: '-7px' }}
+              src="//s.yezgea02.com/1615975178434/lianxi.png"
+              alt=""
+            />
+          }
+        />
       </div>
       <Button className={s.logout} block theme="danger" onClick={logout}>
         退出登录

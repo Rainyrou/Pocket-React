@@ -43,6 +43,7 @@ const Login = () => {
           password
         });
         localStorage.setItem('token', data.token);
+        Toast.show('登录成功');
         window.location.href = '/';
       } else {
         if (!verify) {
@@ -88,8 +89,9 @@ const Login = () => {
       </div>
 
       <div className={s.form}>
-        <Cell icon={<CustomIcon type="zhanghao" />}>
+        <Cell className={s.zaCell} icon={<CustomIcon type="zhanghao" />}>
           <Input
+            className={s.zaInput}
             clearable
             type="text"
             placeholder="请输入账号"
@@ -97,8 +99,9 @@ const Login = () => {
           />
         </Cell>
 
-        <Cell icon={<CustomIcon type="mima" />}>
+        <Cell className={s.zaCell} icon={<CustomIcon type="mima" />}>
           <Input
+            className={s.zaInput}
             clearable
             type="password"
             placeholder="请输入密码"
@@ -107,8 +110,9 @@ const Login = () => {
         </Cell>
 
         {type == 'register' ? (
-          <Cell icon={<CustomIcon type="mima" />}>
+          <Cell className={s.zaCell} icon={<CustomIcon type="mima" />}>
             <Input
+              className={s.zaInput}
               clearable
               type="text"
               placeholder="请输入验证码"
@@ -122,7 +126,13 @@ const Login = () => {
       </div>
 
       <div className={s.operation}>
-        <Button onClick={onSubmit} block theme="primary">
+        <Button
+          className={s.customGradientButton}
+          onClick={onSubmit}
+          block
+          theme="primary"
+          shape="round"
+        >
           {type == 'login' ? '登录' : '注册'}
         </Button>
       </div>

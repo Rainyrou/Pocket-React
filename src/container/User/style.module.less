@@ -42,10 +42,26 @@
     overflow: hidden;
   }
   .logout {
+    display: block; /* 使链接看起来像按钮 */
     width: 90%;
+    max-width: 300px; /* 限制按钮的最大宽度 */
+    padding: 10px 0; /* 上下填充 */
+    text-align: center; /* 文字居中 */
     position: absolute;
-    bottom: 70px;
+    bottom: 70px; /* 距离底部的位置 */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* 水平居中 */
+    background-color: #f44336; /* 红色背景表示退出的危险操作 */
+    color: white; /* 文字颜色 */
+    border-radius: 20px; /* 圆角边框 */
+    font-size: 16px; /* 字体大小 */
+    text-decoration: none; /* 去除下划线 */
+    border: none; /* 去除边框 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+    transition: background-color 0.3s ease; /* 背景颜色变化的过渡效果 */
+  }
+
+  .logout:hover {
+    background-color: #d32f2f; /* 鼠标悬停时的背景颜色 */
   }
 }
