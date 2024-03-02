@@ -12,7 +12,10 @@ const MODE = import.meta.env.MODE; // 环境变量
  * 配置基础路径的好处就是，当请求地址修改的时候，可以在此统一配置。
  * @type {string}
  */
-axios.defaults.baseURL = MODE === 'development' ? '/api' : '';
+axios.defaults.baseURL =
+  MODE === 'development'
+    ? 'http://114.132.167.29:7009'
+    : 'http://114.132.167.29:7009';
 
 /**
  * Authorization 是我们在服务端鉴权的时候用到的，我们在前端设置好 token，服务端通过获取请求头中的 token 去验证每一次请求是否合法
