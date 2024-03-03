@@ -1,4 +1,6 @@
-const MODE = import.meta.env.MODE; // 环境变量
+const MODE = import.meta.env.MODE;
 
 export const baseUrl =
-  MODE == 'development' ? '/api' : 'http://114.132.167.29:7009';
+  MODE == 'development'
+    ? 'http://114.132.167.29:7009'
+    : 'http://114.132.167.29:7009';
