@@ -50,7 +50,7 @@ const UserInfo = () => {
     // 通过 axios 设置  'Content-Type': 'multipart/form-data', 进行文件上传
     axios({
       method: 'post',
-      url: `${baseUrl}/api/upload`,
+      url: `${baseUrl}/upload`,
       data: formData,
       headers: {
         'Content-Type': 'multipart/form-data',
