@@ -50,7 +50,7 @@ const UserInfo = () => {
     // 通过 axios 设置  'Content-Type': 'multipart/form-data', 进行文件上传
     axios({
       method: 'post',
-      url: `${baseUrl}/upload`,
+      url: `${baseUrl}/api/upload`,
       data: formData,
       headers: {
         'Content-Type': 'multipart/form-data',
@@ -59,7 +59,7 @@ const UserInfo = () => {
     }).then((res) => {
       console.log(res);
       // 返回图片地址
-      setAvatar(imgUrlTrans('/api' + res.data));
+      setAvatar(imgUrlTrans(res.data));
     });
   };
 
