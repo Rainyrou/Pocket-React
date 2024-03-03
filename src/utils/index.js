@@ -1,5 +1,5 @@
 import axios from './axios';
-import { baseUrl } from '@/config/index.js';
+import { baseUrl } from '@/config';
 const MODE = import.meta.env.MODE; // 环境变量
 
 export const get = axios.get;

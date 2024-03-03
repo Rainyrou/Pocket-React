@@ -7,3 +7,4 @@ tsconfig.json
 /public
 postcss.config.js
 /android
+vite.config.js

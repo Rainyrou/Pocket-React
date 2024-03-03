@@ -3,7 +3,7 @@ import { Button, FilePicker, Input, Toast, NavBar } from 'zarm';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'; // 由于采用 form-data 传递参数，所以直接只用 axios 进行请求
 import { get, post, imgUrlTrans } from '@/utils';
-import { baseUrl } from '@/config/index.js'; // 由于直接使用 axios 进行请求，统一封装了请求 baseUrl
+import { baseUrl } from '@/config'; // 由于直接使用 axios 进行请求，统一封装了请求 baseUrl
 import s from './style.module.less';
 import { ArrowLeft } from '@zarm-design/icons';
 
