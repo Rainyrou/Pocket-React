@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.clownpocket.app',
+  appId: 'com.clownPocket.app',
   appName: 'clownPocket',
   webDir: 'dist',
   server: {
