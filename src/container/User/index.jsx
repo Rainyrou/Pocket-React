@@ -13,13 +13,11 @@ const User = () => {
     getUserInfo();
   }, []);
 
-  // 获取用户信息
   const getUserInfo = async () => {
     const { data } = await get('/api/user/get_userinfo');
     setUser(data);
     setAvatar(data.avatar);
   };
-  // 退出登录
   const logout = async () => {
     localStorage.removeItem('token');
     history.push('/login');
@@ -39,7 +37,7 @@ const User = () => {
           <span>
             <img
               style={{ width: 30, height: 30, verticalAlign: '-10px' }}
-              src="//s.yezgea02.com/1615973630132/geqian.png"
+              src="/geqian.webp"
               alt=""
             />
             <b>{user.signature || '暂无个签'}</b>
@@ -54,7 +52,7 @@ const User = () => {
           icon={
             <img
               style={{ width: 20, verticalAlign: '-7px' }}
-              src="//s.yezgea02.com/1615974766264/gxqm.png"
+              src="/gxqm.webp"
               alt=""
             />
           }
@@ -66,7 +64,7 @@ const User = () => {
           icon={
             <img
               style={{ width: 20, verticalAlign: '-7px' }}
-              src="//s.yezgea02.com/1615974766264/zhaq.png"
+              src="/zhaq.webp"
               alt=""
             />
           }
@@ -78,7 +76,7 @@ const User = () => {
           icon={
             <img
               style={{ width: 20, verticalAlign: '-7px' }}
-              src="//s.yezgea02.com/1615975178434/lianxi.png"
+              src="/lianxi.webp"
               alt=""
             />
           }

@@ -1,6 +1,6 @@
 import axios from './axios';
 import { baseUrl } from '@/config';
-const MODE = import.meta.env.MODE; // 环境变量
+const MODE = import.meta.env.MODE;
 
 export const get = axios.get;
 export const post = axios.post;
@@ -56,7 +56,7 @@ export const typeMap = {
   }
 };
 
-//添加一些 Pull 组件需要用到的常量
+// Pull 组件用到的常量
 export const REFRESH_STATE = {
   normal: 0, // 普通
   pull: 1, // 下拉刷新（未满足刷新条件）

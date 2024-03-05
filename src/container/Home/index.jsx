@@ -3,7 +3,7 @@ import { Icon, Pull, Drag } from 'zarm';
 import BillItem from '../../components/BillItem';
 import dayjs from 'dayjs';
 import s from './style.module.less';
-import { get, REFRESH_STATE, LOAD_STATE } from '@/utils'; // Pull 组件需要的一些常量
+import { get, REFRESH_STATE, LOAD_STATE } from '@/utils';
 import PopupType from '../../components/PopupType';
 import PopupDate from '@/components/PopupDate';
 import CustomIcon from '@/components/CustomIcon';
@@ -69,25 +69,23 @@ const Home = () => {
 
   const addToggle = () => {
     addRef.current && addRef.current.show();
-    // do something
   };
 
   const addRef = useRef(); // 添加账单 ref
   const typeRef = useRef(); // 账单类型 ref
-  const monthRef = useRef(); // 月份筛选 ref
+  const monthRef = useRef();
   const [currentSelect, setCurrentSelect] = useState({}); // 当前筛选类型
 
-  // const [currentTime, setCurrentTime] = useState(dayjs().format('YYYY-MM')); // 当前筛选时间
-  const [currentTime, setCurrentTime] = useState(dayjs().format('YYYY-MM')); // 当前筛选时间
-  const [page, setPage] = useState(1); // 分页
-  const [list, setList] = useState([]); // 账单列表
-  const [totalPage, setTotalPage] = useState(0); // 分页总数
+  const [currentTime, setCurrentTime] = useState(dayjs().format('YYYY-MM'));
+  const [page, setPage] = useState(1);
+  const [list, setList] = useState([]);
+  const [totalPage, setTotalPage] = useState(0);
 
-  const [refreshing, setRefreshing] = useState(REFRESH_STATE.normal); // 下拉刷新状态
-  const [loading, setLoading] = useState(LOAD_STATE.normal); // 上拉加载状态
+  const [refreshing, setRefreshing] = useState(REFRESH_STATE.normal);
+  const [loading, setLoading] = useState(LOAD_STATE.normal);
 
-  const [totalExpense, setTotalExpense] = useState(0); // 总支出
-  const [totalIncome, setTotalIncome] = useState(0); // 总收入
+  const [totalExpense, setTotalExpense] = useState(0);
+  const [totalIncome, setTotalIncome] = useState(0);
 
   useEffect(() => {
     getBillList();
@@ -125,7 +123,7 @@ const Home = () => {
   // 筛选类型
   const select = (item) => {
     setRefreshing(REFRESH_STATE.loading);
-    // 触发刷新列表，将分页重制为 1
+    // 触发刷新列表，将分页置为 1
     setPage(1);
     setCurrentSelect(item);
   };
@@ -148,12 +146,10 @@ const Home = () => {
     }
   };
 
-  // 选择月份弹窗
   const monthToggle = () => {
     monthRef.current && monthRef.current.show();
   };
 
-  // 筛选月份
   const selectMonth = (item) => {
     setRefreshing(REFRESH_STATE.loading);
     setPage(1);

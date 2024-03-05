@@ -18,8 +18,8 @@ const Login = () => {
   const captchaRef = useRef();
   const [type, setType] = useState('login'); // 登录注册类型
   const [captcha, setCaptcha] = useState(''); // 验证码变化后存储值
-  const [username, setUsername] = useState(''); // 账号
-  const [password, setPassword] = useState(''); // 密码
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [verify, setVerify] = useState(''); // 验证码
 
   //  验证码变化，回调方法

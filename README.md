@@ -60,28 +60,13 @@ npm run test
 
 ###### H5 端打包成 Android 或 iOS App
 
-初始化 Capacitor
-
 ```bash
 npm install @capacitor/core @capacitor/cli
 npx cap init
-```
-
-项目构建
-
-```bash
-npm run build
-```
-
-同步项目
-
-```bash
+npx cap add android
+npx cap add ios
+npm run build:release
 npx cap sync
-```
-
-在相应 IDE 进行构建
-
-```bash
 npx cap open android
 npx cap open ios
 ```

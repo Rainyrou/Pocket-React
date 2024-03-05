@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Button, FilePicker, Input, Toast, NavBar } from 'zarm';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios'; // 由于采用 form-data 传递参数，所以直接只用 axios 进行请求
+import axios from 'axios';
 import { get, post, imgUrlTrans } from '@/utils';
-import { baseUrl } from '@/config'; // 由于直接使用 axios 进行请求，统一封装了请求 baseUrl
+import { baseUrl } from '@/config';
 import s from './style.module.less';
 import { ArrowLeft } from '@zarm-design/icons';
 
 const UserInfo = () => {
-  const history = useHistory(); // 路由实例
-  const [user, setUser] = useState({}); // 用户
-  const [avatar, setAvatar] = useState(''); // 头像
-  const [signature, setSignature] = useState(''); // 个签
-  const token = localStorage.getItem('token'); // 登录令牌
+  const history = useHistory();
+  const [user, setUser] = useState({});
+  const [avatar, setAvatar] = useState('');
+  const [signature, setSignature] = useState('');
+  const token = localStorage.getItem('token');
 
-  // 获取用户信息
   const getUserInfo = async () => {
     const { data } = await get('/api/user/get_userinfo');
     setUser(data);
@@ -34,23 +33,17 @@ const UserInfo = () => {
       avatar
     });
     Toast.show('修改成功');
-    // 成功后回到个人中心页面
     history.goBack();
   };
 
   const handleSelect = (file) => {
-    //file 属性为 File 文件类型，它是浏览器返回的原生对象
-    // if (file && file.file.size > 200 * 1024) {
-    //     Toast.show('上传头像不得超过 200 KB！！')
-    //     return
-    // }
     let formData = new FormData();
     // 生成 form-data 数据类型
     formData.append('file', file.file);
-    // 通过 axios 设置  'Content-Type': 'multipart/form-data', 进行文件上传
+    // 通过 axios 设置  'Content-Type': 'multipart/form-data' 进行文件上传
     axios({
       method: 'post',
-      url: `${baseUrl}/api/upload`,
+      url: `${baseUrl}/upload`,
       data: formData,
       headers: {
         'Content-Type': 'multipart/form-data',
@@ -58,8 +51,7 @@ const UserInfo = () => {
       }
     }).then((res) => {
       console.log(res);
-      // 返回图片地址
-      setAvatar(imgUrlTrans(res.data));
+      setAvatar(imgUrlTrans('/api' + res.data));
     });
   };
 

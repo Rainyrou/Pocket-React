@@ -21,9 +21,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.17",
-    "@capacitor/android": "^5.7.1",
-    "@capacitor/cli": "^5.7.1",
-    "@capacitor/core": "^5.7.1",
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
     "dayjs": "^1.10.4",

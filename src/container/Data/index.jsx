@@ -23,7 +23,7 @@ const Data = () => {
   useEffect(() => {
     getData();
     return () => {
-      // 每次组件卸载的时候，需要释放图表实例。clear 只是将其清空不会释放。
+      // 每次组件卸载时释放图表实例。clear 只清空不释放
       proportionChart?.dispose();
     };
   }, [currentMonth]);
@@ -31,7 +31,6 @@ const Data = () => {
   const getData = async () => {
     const { data } = await get(`/api/bill/data?date=${currentMonth}`);
 
-    // 总收支
     setTotalExpense(data.total_expense);
     setTotalIncome(data.total_income);
 
@@ -52,14 +51,11 @@ const Data = () => {
     setTotalType(type);
   };
 
-  // 切换饼图收支类型
   const changePieType = (type) => {
     setPieType(type);
-    // 重绘饼图
     setPieChart(type == 'expense' ? expenseData : incomeData);
   };
 
-  // 绘制饼图方法
   const setPieChart = (data) => {
     if (window.echarts) {
       proportionChart = echarts.init(document.getElementById('proportion'));
@@ -68,7 +64,6 @@ const Data = () => {
           trigger: 'item',
           formatter: '{a} <br/>{b} : ¥{c} ({d}%)'
         },
-        // 图例
         legend: {
           data: data.map((item) => item.type_name)
         },
@@ -96,7 +91,6 @@ const Data = () => {
     }
   };
 
-  // 月份弹窗开关
   const monthShow = () => {
     monthRef.current && monthRef.current.show();
   };
