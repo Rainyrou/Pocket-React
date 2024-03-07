@@ -1,10 +1,12 @@
-import Data from '../container/Data';
-import Home from '../container/Home';
-import User from '../container/User';
-import Login from '../container/Login';
-import Detail from '../container/Detail';
-import UserInfo from '../container/UserInfo';
-import Account from '@/container/Account';
+import React from 'react';
+
+const Home = React.lazy(() => import('../container/Home'));
+const Data = React.lazy(() => import('../container/Data'));
+const User = React.lazy(() => import('../container/User'));
+const Login = React.lazy(() => import('../container/Login'));
+const Detail = React.lazy(() => import('../container/Detail'));
+const UserInfo = React.lazy(() => import('../container/UserInfo'));
+const Account = React.lazy(() => import('@/container/Account'));
 
 const routes = [
   {

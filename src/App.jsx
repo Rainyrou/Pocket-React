@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import { Switch, Route, useLocation } from 'react-router-dom';
@@ -20,13 +20,15 @@ function App() {
   return (
     <>
       <ConfigProvider primaryColor={'#007fff'} locale={zhCN}>
-        <Switch>
-          {routes.map((route) => (
-            <Route exact key={route.path} path={route.path}>
-              <route.component />
-            </Route>
-          ))}
-        </Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            {routes.map((route) => (
+              <Route exact key={route.path} path={route.path}>
+                <route.component />
+              </Route>
+            ))}
+          </Switch>
+        </Suspense>
       </ConfigProvider>
       <NavBar showNav={showNav} pathname={pathname}></NavBar>
     </>
