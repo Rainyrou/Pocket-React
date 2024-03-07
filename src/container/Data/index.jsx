@@ -108,7 +108,8 @@ const Data = () => {
         </div>
         <div className={s.title}>共支出</div>
         <div className={s.expense}>¥{totalExpense}</div>
-        <div className={s.income}>共收入¥{totalIncome}</div>
+        <div className={s.title}>共收入</div>
+        <div className={s.income}>¥{totalIncome}</div>
       </div>
       <div className={s.structure}>
         <div className={s.head}>
